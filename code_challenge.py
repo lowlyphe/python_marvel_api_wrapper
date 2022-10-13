@@ -12,9 +12,10 @@ class API(object):
                          'fromdate=all&todate=undefined&excode=oprac&callput=callput&money=all&type=all'.format(quote)
         response = requests.get(url, headers=self.headers).json()
         if (response['message'] is not None or response['data'] is None):
-            output_dict = {'current_price': 'Data not available', 'option_data': 'data not available'}
-            print()
-            return output_dict
+            # output_dict = {'current_price': 'Data not available', 'option_data': 'data not available'}
+            # print(output_dict)
+            # return output_dict
+            return
         current_stock_price = response['data']['lastTrade'].split(" ")[2]
         output_list = 'response'
         output_dict = {'current_price': current_stock_price, 'option_data': output_list}

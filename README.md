@@ -13,7 +13,7 @@
 
 # Main functions
 
-Set main endpoint
+## Set main endpoint
 
             instance.set_endpoint('endpoint[string]')
 
@@ -32,8 +32,10 @@ Search for a particular character by id
 
             instance.set_id('character id[int]')
 
-API example: https://gateway.marvel.com/v1/public/'endpoint'/'character id'
+API example: https://gateway.marvel.com/v1/public/'endpoint'/'character/'id'
 Fetches a list of (endpoint) filtered by id
+
+## Set Sub Endpoint
 
 Set a sub endpoint landing url under the desired endpoint. Character id must be set to use sub endpoint.
 
