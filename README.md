@@ -81,11 +81,25 @@ Sub endpoint options:
 
 ## Modifiers
 
-Modifiers may be used to modify the returned result. Only one modifier may be used per call
+Modifiers may be used to modify the returned result by passing in optional parameters to the API call
+
+- Modifiers may be used with any endpoint, id, and sub endpoint.
 
 Code example with modifiers
 
             instance.set_modifier('modifier_name', 'modifier_value')
             instance.set_modifier('name', 'iron man')
+
+- If a modifier is not correct, or the API does not support that combination of modifiers, printing the Marvel object will return the status code and message.
+
+      instance.set_endpoint('comics')
+      instance.set_modifier('name', 'storm')
+      print(instance.get_info())
+      # returns: {'code': 404, 'status': "We couldn't find that comic_issue"}
+
+      instance.set_endpoint('comics')
+      instance.set_modifier('title', 'storm')
+      print(instance.get_info())
+      # returns [{'id': 3627, 'digitalId': 0, 'title': 'Storm (2006)'...}]
 
 For more information on all available modifiers visit the [Marvel API Documentation](https://developer.marvel.com/docs)
