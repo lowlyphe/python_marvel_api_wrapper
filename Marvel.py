@@ -3,14 +3,14 @@ import hashlib
 import requests
 
 
-
 class Marvel:
-    def __init__(self, public_key, private_key, id=0, endpoint='', sub_endpoint='', modifier=''):
+    def __init__(self, public_key):
         self.public_key = public_key
-        self.private_key = private_key 
-        self.id = id
-        self.sub_endpoint = sub_endpoint
-        self.modifier = modifier
+        self.private_key = ''
+        self.id = 0
+        self.endpoint = ''
+        self.sub_endpoint = ''
+        self.modifier = ''
 
     def set_id(self, id):
         self.id = id
