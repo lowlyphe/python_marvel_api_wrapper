@@ -1,5 +1,11 @@
 # How to use
 
+# Prerequisites
+
+- Navigate to the [Marvel Developer Portal](https://developer.marvel.com/)
+- Create a developer account
+- Obtain your personal public and private API keys
+
 # Installation
 
             import Marvel from Marvel
@@ -28,9 +34,11 @@ Endpoint options:
 - series - Fetches list of series
 - stories - Fetches list of stories
 
-Search for a particular character by id
+## Set Endpoint ID
 
-            instance.set_id('character id[int]')
+Search for a particular 'endpoint' by id
+
+            instance.set_id(id[int])
 
 API example: https://gateway.marvel.com/v1/public/'endpoint'/'character/'id'
 Fetches a list of (endpoint) filtered by id
@@ -87,7 +95,7 @@ Modifiers may be used to modify the returned result by passing in optional param
 
 Code example with modifiers
 
-            instance.set_modifier('modifier_name', 'modifier_value')
+            instance.set_modifier(modifier_name[string], modifier_value[string])
             instance.set_modifier('name', 'iron man')
 
 - If a modifier is not correct, or the API does not support that combination of modifiers, printing the Marvel object will return the status code and message.
